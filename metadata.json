@@ -1,0 +1,8 @@
+{
+  "name": "Taarini Impex | Stainless Steel Cookware & Global Export",
+  "description": "Premium consumer cookware catalog featuring heavy-gauge Tri-Ply stainless steel pots, pans, pressure cookers, and kitchen essentials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
