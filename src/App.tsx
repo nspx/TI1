@@ -32,17 +32,17 @@ export default function App() {
   // Active Navigation Section
   const [activeSection, setActiveSection] = useState<string>('catalog');
 
-  // Wishlist State (persisted)
+  // Wishlist State (persisted, default empty)
   const [wishlist, setWishlist] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem('taarini_wishlist');
-      return saved ? JSON.parse(saved) : ['tp-kadhai-deluxe', 'tp-tawa-dosa'];
+      return saved ? JSON.parse(saved) : [];
     } catch {
-      return ['tp-kadhai-deluxe', 'tp-tawa-dosa'];
+      return [];
     }
   });
 
-  // Shopping Bag Items (persisted)
+  // Shopping Bag Items (persisted, default empty)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
       const saved = localStorage.getItem('taarini_consumer_cart');
@@ -50,20 +50,7 @@ export default function App() {
     } catch (e) {
       console.warn('Storage read error', e);
     }
-    // Default initial cart item for a consumer
-    return [
-      {
-        productId: 'tp-kadhai-deluxe',
-        variantId: 'tp-kadhai-24',
-        productName: 'Taarini Platinum Tri-Ply Deep Kadhai with Lid',
-        variantLabel: '24 cm (2.8 Litres / 3-4 Persons)',
-        image: '/images/triply-kadai.jpg',
-        unitPriceUSD: 42.0,
-        quantity: 1,
-        mode: 'sample',
-        sku: 'TI-TP-KDH-24',
-      }
-    ];
+    return [];
   });
 
   // Modals & Drawers

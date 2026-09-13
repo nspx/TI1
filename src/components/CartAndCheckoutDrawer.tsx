@@ -143,12 +143,23 @@ export const CartAndCheckoutDrawer: React.FC<CartAndCheckoutDrawerProps> = ({
               </div>
             </div>
 
-            <button
-              onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-200/60 transition-colors cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-1">
+              {viewState === 'cart' && items.length > 0 && (
+                <button
+                  onClick={onClearCart}
+                  className="px-2.5 py-1 text-xs text-rose-600 hover:text-rose-700 hover:bg-rose-50 rounded-lg font-medium transition-colors cursor-pointer mr-1"
+                  title="Remove all items from bag"
+                >
+                  Clear Bag
+                </button>
+              )}
+              <button
+                onClick={onClose}
+                className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-200/60 transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {/* Body Content */}
